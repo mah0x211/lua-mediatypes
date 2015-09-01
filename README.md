@@ -33,7 +33,7 @@ local mt = MediaTypes.new([[
 
 ## Methods
 
-### mime = getMIME( ext:string )
+### mime = mt:getMIME( ext:string )
 
 returns a MIME type string associated with ext argument.
 
@@ -52,7 +52,7 @@ print( mt:getMIME('my') ); -- 'my/mimetype'
 print( mt:getMIME('myfile') ); -- 'my/mimetype'
 ```
 
-### ext = getExt( mime:string )
+### ext = mt:getExt( mime:string )
 
 returns a extension strings table associated with mime argument.
 
