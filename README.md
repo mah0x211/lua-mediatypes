@@ -54,7 +54,7 @@ application/json json;
 ```
 
 
-### mime = mt:getmime( ext:string )
+### mime = mt:getmime( ext )
 
 returns a MIME type string associated with ext argument.
 
@@ -73,7 +73,7 @@ print( mt:getmime('my') ); -- 'my/mimetype'
 print( mt:getmime('myfile') ); -- 'my/mimetype'
 ```
 
-### exts = mt:getexts( mime:string )
+### exts = mt:getexts( mime )
 
 returns a extension strings table associated with mime argument.
 
