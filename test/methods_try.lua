@@ -17,17 +17,17 @@ for _, arg in ipairs({
     ifTrue( isolate( mt.readTypes, mt, arg ) );
 end
 
-ifNotNil( mt:getMIME('my') );
-ifNotNil( mt:getMIME('myfile') );
-ifNotNil( mt:getExt('my/mimetype') );
-mt:readTypes( mimetypes );
-ifNotEqual( mt:getMIME('my'), 'my/mimetype' );
-ifNotEqual( mt:getMIME('myfile'), 'my/mimetype' );
-ifNotEqual( mt:getExt('my/mimetype'), { 'my', 'myfile' } );
+ifNotNil( mt:getmime('my') );
+ifNotNil( mt:getmime('myfile') );
+ifNotNil( mt:getexts('my/mimetype') );
+mt:read( mimetypes );
+ifNotEqual( mt:getmime('my'), 'my/mimetype' );
+ifNotEqual( mt:getmime('myfile'), 'my/mimetype' );
+ifNotEqual( mt:getexts('my/mimetype'), { 'my', 'myfile' } );
 
 -- read mimetypes on initialize
 mt = ifNil( MediaTypes.new( mimetypes ) );
-ifNotEqual( mt:getMIME('my'), 'my/mimetype' );
-ifNotEqual( mt:getMIME('myfile'), 'my/mimetype' );
-ifNotEqual( mt:getExt('my/mimetype'), { 'my', 'myfile' } );
+ifNotEqual( mt:getmime('my'), 'my/mimetype' );
+ifNotEqual( mt:getmime('myfile'), 'my/mimetype' );
+ifNotEqual( mt:getexts('my/mimetype'), { 'my', 'myfile' } );
 
