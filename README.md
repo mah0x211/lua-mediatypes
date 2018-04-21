@@ -11,7 +11,7 @@ luarocks install mediatypes --from=http://mah0x211.github.io/rocks/
 
 ## Creating a MediaTypes Object
 
-### mt = mediatypes.new( [mimetypes:string] )
+### mt = mediatypes.new( [mimetypes] )
 
 
 **Parameters**
@@ -31,9 +31,30 @@ local mt = MediaTypes.new([[
 ]]);
 ```
 
+
 ## Methods
 
-### mime = mt:getMIME( ext:string )
+### mt:read( mimetypes )
+
+add new mime types from a mime types definition string.
+
+**Parameters**
+
+- `mimetypes:string`: mime string.
+
+
+**Example**
+
+```lua
+mt:read([[
+# JavaScript
+application/javascript js;
+application/json json;
+]]);
+```
+
+
+### mime = mt:getmime( ext:string )
 
 returns a MIME type string associated with ext argument.
 
@@ -48,11 +69,11 @@ returns a MIME type string associated with ext argument.
 **Example**
 
 ```lua
-print( mt:getMIME('my') ); -- 'my/mimetype'
-print( mt:getMIME('myfile') ); -- 'my/mimetype'
+print( mt:getmime('my') ); -- 'my/mimetype'
+print( mt:getmime('myfile') ); -- 'my/mimetype'
 ```
 
-### ext = mt:getExt( mime:string )
+### exts = mt:getexts( mime:string )
 
 returns a extension strings table associated with mime argument.
 
@@ -62,7 +83,7 @@ returns a extension strings table associated with mime argument.
 
 **Returns**
 
-- `mime:string`: extension strings table or nil.
+- `exts:table`: extension strings table or nil.
 
 **Example**
 
