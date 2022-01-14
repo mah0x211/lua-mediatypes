@@ -1,12 +1,15 @@
 lua-mediatypes
 ==
 
+[![test](https://github.com/mah0x211/lua-mediatypes/actions/workflows/test.yml/badge.svg)](https://github.com/mah0x211/lua-mediatypes/actions/workflows/test.yml)
+[![Coverage Status](https://coveralls.io/repos/github/mah0x211/lua-mediatypes/badge.svg?branch=master)](https://coveralls.io/github/mah0x211/lua-mediatypes?branch=master)
+
 MIME type utility module.
 
 ## Installation
 
 ```
-luarocks install mediatypes --from=http://mah0x211.github.io/rocks/
+luarocks install mediatypes
 ```
 
 ## Creating a MediaTypes Object
